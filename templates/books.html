@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <h3 class="center-align">Newly Added</h3>
+</div>
+<div class="row">
+    {% for book in books[:-7:-1] %}
+        <div class="col s12 m6 l2">
+            <div class="card">
+                <div class="card-image">
+                    <a href="#"> <img src="{{ book.book_cover_link }}"> </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
