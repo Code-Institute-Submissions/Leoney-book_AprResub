@@ -18,4 +18,49 @@
                 Buy Now
             </div>
         </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="card-panel">
+                        <span class="card-title"> Comments</span>
+                        {% if session.user %}
+                            <a class="btn teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
+                        {% else %}
+                            <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
+                        {% endif %}
+                        {% for comment in check_comments %}
+                            {% if comment.book_name2 == find_book_id.book_name %}
+                                <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
+                                <p> {{ comment.added_comment}} </p>
+                                <hr>
+                            {% endif %}
+                        {% endfor %}
+                        <div id="modaladdcomment" class="modal modal-comment">
+                            <div class="modal-content">
+                                <form method="POST" action="#">
+                                    <header>Rate This Book:</header>
+                                    <div class="row starwidget">
+                                        <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
+                                        <label for="rate-5" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-4" value="4" class="browser-default">
+                                        <label for="rate-4" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-3" value="3" class="browser-default">
+                                        <label for="rate-3" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-2" value="2" class="browser-default">
+                                        <label for="rate-2" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-1" value="1" class="browser-default">
+                                        <label for="rate-1" class="fas fa-star"></label>
+                                    </div>
+                                    <div class="row input-field">
+                                        <textarea name="comment_area" id="textarea1" class="materialize-textarea"></textarea>
+                                        <label for="textarea1">Add Comment Here</label>
+                                    </div>
+                                    <button class="btn-flat teal lighten-2 modal-close" type="submit">Post</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
 {% endblock %}
