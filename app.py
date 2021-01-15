@@ -114,6 +114,26 @@ def get_book_profile(book_id):
     books = list(mongo.db.books.find())
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
 
+
+@app.route("/add_comment/<book_id>", methods=["GET", "POST"])
+def add_comment(book_id):
+    if request.method == "POST":
+        dook_id = book_id
+        find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+        book_name = find_book_id.get("book_name")
+        check_comments = mongo.db.comments.find({"book_name": book_name})
+        books = list(mongo.db.books.find())
+        rate_comment = {
+            "book_name": book_name,
+            "username": session["user"],
+            "given_rate": request.form.get("rate"),
+            "added_comment": request.form.get("comment_area")
+        }
+        mongo.db.comments.insert_one(rate_comment)
+        flash("Rate/Comment Successfully Added")
+        return redirect(url_for("get_book_profile",book_id = book_id ))
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

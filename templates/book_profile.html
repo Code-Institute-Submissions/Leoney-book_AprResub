@@ -29,7 +29,7 @@
                             <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
                         {% for comment in check_comments %}
-                            {% if comment.book_name2 == find_book_id.book_name %}
+                            {% if comment.book_name == find_book_id.book_name %}
                                 <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
                                 <p> {{ comment.added_comment}} </p>
                                 <hr>
