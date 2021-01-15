@@ -1,0 +1,20 @@
+/*===== GOGGLE FONTS =====*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+/*===== NAV BAR =====*/
+.brand-logo {
+    color: #888 !important;
+    background-image: linear-gradient(0deg,#ffe0b2 50%,transparent 50%);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    letter-spacing: .07rem;
+}
+
+.nav-list a{
+    color: #222 !important;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    letter-spacing: .07rem;
+}
+
