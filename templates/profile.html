@@ -19,6 +19,7 @@
                         <li class="collection-item"><a href="{{ url_for('get_book_profile', book_id=book._id) }}">{{ book.book_name }} by {{ book.author_name}}</a></li>
                     {% endif %}
                 {% endfor %}
+            </ul>
         </div>
     </div>
     <div class="row">
