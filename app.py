@@ -96,8 +96,8 @@ def add_book():
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
             "book_cover_link": request.form.get("book_cover_link"),
-            "book_description": request.form.get("book_description")
-            "added_by_username": session["user"],
+            "book_description": request.form.get("book_description"),
+            "added_by_user": session["user"]
         }
         mongo.db.books.insert_one(book)
         flash("Book Successfully Added")
