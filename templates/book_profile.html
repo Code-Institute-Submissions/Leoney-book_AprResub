@@ -37,7 +37,7 @@
                         {% endfor %}
                         <div id="modaladdcomment" class="modal modal-comment">
                             <div class="modal-content">
-                                <form method="POST" action="#">
+                                <form method="POST" action="{{ url_for('add_comment', book_id=find_book_id._id, book_name=find_book_id.book_name) }}">
                                     <header>Rate This Book:</header>
                                     <div class="row starwidget">
                                         <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
