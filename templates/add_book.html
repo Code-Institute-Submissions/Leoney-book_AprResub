@@ -2,11 +2,11 @@
 {% block content %}
     <h3 class="teal-text text-lighten-2 center-align text-shadow">Add Book</h3>
 
-    <div class="row card-panel orange lighten-4">
+    <div class="row card-panel">
         <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix teal-text text-lighten-2"></i>
+                    <i class="fas fa-folder-open prefix teal-text text-lighten-2 text-shadow"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Genre</option>
                         {% for category in categories %}
@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-book prefix teal-text text-lighten-2"></i>
+                    <i class="fas fa-book prefix teal-text text-lighten-2 text-shadow"></i>
                     <input id="book_name" name="book_name" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                     <label for="book_name">Book Title</label>
@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-feather-alt prefix teal-text text-lighten-2"></i>
+                    <i class="fas fa-feather-alt prefix teal-text text-lighten-2 text-shadow"></i>
                     <input id="author_name" name="author_name" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                     <label for="author_name">Author</label>
@@ -34,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-link prefix teal-text text-lighten-2"></i>
+                    <i class="fas fa-link prefix teal-text text-lighten-2 text-shadow"></i>
                     <input id="book_cover_link" name="book_cover_link" minlength="5" maxlength="50"
                     type="text" class="validate" required>
                     <label for="book_cover_link">Book Cover Link</label>
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-scroll prefix teal-text text-lighten-2"></i>
+                    <i class="fas fa-scroll prefix teal-text text-lighten-2 text-shadow"></i>
                     <textarea id="book_description" name="book_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required></textarea>
                     <label for="book_description">Book Description</label>
