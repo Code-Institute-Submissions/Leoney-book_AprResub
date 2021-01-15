@@ -30,11 +30,11 @@
                     {% if session.user|lower == comment.username|lower  %}
                         <li class="collection-item">
                             <div class="col s12 m4 l8">
-                                <p><a href="{{ url_for('get_book_profile', book_id=book._id) }}">{{ comment.book_name}}</a></p>
+                                <p>{{ comment.book_name}}</p>
                                 <p>Rated: {{ comment.given_rate}}/5</p>
                                 <p>Comment: {{ comment.added_comment}}</p>
                             </div>
-                            <div class="col s12 m4 l4">
+                            <div class="comments-btns col s12 m4 l4">
                                 <a href="#" class="btn-small red darken-3">Delete</a>
                                 <a href="#modaleditcomment" class="btn-small modal-trigger teal lighten-2">Edit</a>
                             </div>
