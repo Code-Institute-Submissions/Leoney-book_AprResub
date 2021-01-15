@@ -36,9 +36,33 @@
                             </div>
                             <div class="col s12 m4 l4">
                                 <a href="#" class="btn-small red darken-3">Delete</a>
-                                <a href="#" class="btn-small modal-trigger light-blue lighten-1">Edit</a>
+                                <a href="#modaleditcomment" class="btn-small modal-trigger light-blue lighten-1">Edit</a>
                             </div>
                         </li>
+                        <div id="modaleditcomment" class="modal modal-comment">
+                            <div class="modal-content">
+                                <form method="POST" action="{{ url_for('edit_review', comment_id=comment._id, book_name = comment.book_name) }}">
+                                    <header>Rate This Book:</header>
+                                    <div class="row starwidget">
+                                        <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
+                                        <label for="rate-5" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-4" value="4" class="browser-default">
+                                        <label for="rate-4" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-3" value="3" class="browser-default">
+                                        <label for="rate-3" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-2" value="2" class="browser-default">
+                                        <label for="rate-2" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-1" value="1" class="browser-default">
+                                        <label for="rate-1" class="fas fa-star"></label>
+                                    </div>
+                                    <div class="row input-field">
+                                        <textarea name="comment_area" id="textarea1" class="materialize-textarea"></textarea>
+                                        <label for="textarea1">Add Comment Here</label>
+                                    </div>
+                                    <button class="btn-flat teal lighten-2 modal-close" type="submit">Edit</button>
+                                </form>
+                            </div>
+                        </div>
                     {% endif %}
                 {% endfor%}
             </ul>
