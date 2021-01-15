@@ -63,3 +63,9 @@ input#rate-5:checked ~ label {
 .comment-btn {
     float: right;
 }
+
+/*===== EDIT/DELETE COMMENT BUTTONS =====*/
+
+.comments-btns {
+    padding-top: 1rem;
+}
