@@ -154,6 +154,16 @@ def edit_review(comment_id):
     check_comments = mongo.db.comments.find()
     return render_template("profile.html", username=username, books = books, check_comments = check_comments)
 
+@app.route("/delete_review/<comment_id>")
+def delete_review(comment_id):
+    mongo.db.comments.remove({"_id": ObjectId(comment_id)})
+    flash("Review Successfully Deleted")
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    books = list(mongo.db.books.find())
+    check_comments = mongo.db.comments.find()
+    return render_template("profile.html", username=username, books = books, check_comments = check_comments)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
