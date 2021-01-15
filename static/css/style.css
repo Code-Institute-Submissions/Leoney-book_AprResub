@@ -24,6 +24,12 @@
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
+/*===== SEARCH BAR =====*/
+
+.search-bar{
+    margin: 5rem 0 !important;
+}
+
 /*===== ADD COMMENT MODAL =====*/
 
 .modal-comment{
