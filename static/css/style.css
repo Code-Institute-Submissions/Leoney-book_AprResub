@@ -13,18 +13,7 @@ main {
 }
 
 .card-image {
-    box-shadow: -.65rem .65rem 0 rgba(255, 224, 178, .2);
-}
-
-span.card-title {
-    display:block;
-    width: 50%;
-    background-image: linear-gradient(to right, #ffeeda , white);
-    text-transform: uppercase;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: .07rem;
+    box-shadow: -.65rem .65rem 0 rgba(255, 224, 178, .5);
 }
 
 /*===== NAV BAR =====*/
@@ -129,6 +118,17 @@ input#rate-5:checked ~ label {
     color: #222 !important;
     text-decoration: none;
     border-bottom: 1px solid #4db6ac;
+}
+
+span.card-title {
+    display:block;
+    width: 50%;
+    background-image: linear-gradient(to right, #ffeeda , white);
+    text-transform: uppercase;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: .07rem;
 }
 
 /*===== FOOTER =====*/
