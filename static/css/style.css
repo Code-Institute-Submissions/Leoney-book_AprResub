@@ -2,6 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 /*===== NAV BAR =====*/
 .brand-logo {
     background-image: linear-gradient(0deg,#ffe0b2 50%,transparent 50%);
@@ -74,4 +84,34 @@ input#rate-5:checked ~ label {
 
 .comments-btns {
     padding-top: 1rem;
+}
+
+/*===== BOOK PROFILE =====*/
+
+.container.book-profile {
+    padding-top: 2rem;
+}
+
+.book-profile h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+.book-profile h3 span {
+    background-image: linear-gradient(0deg,#ffeeda 50%,transparent 50%);
+}
+
+.book-profile h4{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+}
+
+.book-profile h4 span {
+    color:  #888 !important;
+}
+
+.book-profile h4 a {
+    color: #222 !important;
+    text-decoration: none;
+    border-bottom: 1px solid #4db6ac;
 }
