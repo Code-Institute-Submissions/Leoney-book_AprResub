@@ -10,7 +10,7 @@
             </div>
             <div class="book-profile col s9">
                 <h3><span>{{ find_book_id.book_name }}</span></h2>
-                <h4><span>By </span><a href="#">{{ find_book_id.author_name }}</a></h4>
+                <h4><span>By </span><a href="{{ url_for('get_author_books', author_name = find_book_id.author_name) }}">{{ find_book_id.author_name }}</a></h4>
                 <p class="teal-text text-lighten-2">{{ find_book_id.category_name }}</p>
                 <a class="btn-small teal lighten-2" href="#"><i class="white-text text-white text-shadow fab fa-amazon "></i></a>
                 <p>{{ find_book_id.book_description }}</p>

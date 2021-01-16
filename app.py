@@ -121,6 +121,11 @@ def get_book_profile(book_id):
     books = list(mongo.db.books.find())
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
 
+@app.route("/get_author_books/<author_name>", methods=["GET"])
+def get_author_books(author_name):
+    author_name = author_name
+    books = list(mongo.db.books.find())
+    return render_template("author.html", books=books, author_name = author_name )
 
 @app.route("/add_comment/<book_id>", methods=["GET", "POST"])
 def add_comment(book_id):
