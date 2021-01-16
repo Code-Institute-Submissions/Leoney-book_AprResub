@@ -12,7 +12,7 @@
                 <h3><span>{{ find_book_id.book_name }}</span></h2>
                 <h4><span>By </span><a href="#">{{ find_book_id.author_name }}</a></h4>
                 <p class="teal-text text-lighten-2">{{ find_book_id.category_name }}</p>
-                <a href="#"><span><i class="fab fa-amazon"></i></span></a>
+                <a class="btn-small teal lighten-2" href="#"><i class="white-text text-white text-shadow fab fa-amazon "></i></a>
                 <p>{{ find_book_id.book_description }}</p>
             </div>
         </div>
@@ -21,16 +21,15 @@
                 <div class="row">
                     <div class="card-panel">
                         {% if session.user %}
-                            <a class="btn teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
+                            <a class="btn-small teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% else %}
-                            <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
+                            <a class="btn-small teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
-                        <span class="card-title"> Comments</span>
+                        <span class="card-title text-shadow"> Comments</span>
                         {% for comment in check_comments %}
                             {% if comment.book_name == find_book_id.book_name %}
                                 <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
                                 <p> {{ comment.added_comment}} </p>
-                                <hr>
                             {% endif %}
                         {% endfor %}
                         <div id="modaladdcomment" class="modal modal-comment">
