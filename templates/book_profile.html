@@ -11,7 +11,7 @@
             <div class="book-profile col s9">
                 <h3><span>{{ find_book_id.book_name }}</span></h2>
                 <h4><span>By </span><a href="#">{{ find_book_id.author_name }}</a></h4>
-                <p>{{ find_book_id.category_name }}</p>
+                <p class="teal-text text-lighten-2">{{ find_book_id.category_name }}</p>
                 <p>{{ find_book_id.book_description }}</p>
                 <a href="#"><i class="fab fa-amazon"></i></a>
             </div>
@@ -20,12 +20,12 @@
             <div class="col s12">
                 <div class="row">
                     <div class="card-panel">
-                        <span class="card-title"> Comments</span>
                         {% if session.user %}
                             <a class="btn teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% else %}
                             <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
+                        <span class="card-title"> Comments</span>
                         {% for comment in check_comments %}
                             {% if comment.book_name == find_book_id.book_name %}
                                 <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
