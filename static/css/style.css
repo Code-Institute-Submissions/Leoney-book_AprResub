@@ -115,3 +115,9 @@ input#rate-5:checked ~ label {
     text-decoration: none;
     border-bottom: 1px solid #4db6ac;
 }
+
+/*===== FOOTER =====*/
+
+footer {
+    padding-top: 0 !important;
+}
