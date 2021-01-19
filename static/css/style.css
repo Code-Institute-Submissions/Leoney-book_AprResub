@@ -105,6 +105,9 @@ input#rate-5:checked ~ label {
 
 /*===== USER PROFILE PAGE =====*/
 
+.collection-item a {
+    color: #4db6ac !important;
+}
 .comment-part {
     text-transform: uppercase;
     font-family: 'Rubik', sans-serif;
