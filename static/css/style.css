@@ -105,7 +105,7 @@ input#rate-5:checked ~ label {
 
 /*===== USER PROFILE PAGE =====*/
 
-.collection-item a {
+.added-books a {
     color: #4db6ac !important;
 }
 .comment-part {
