@@ -30,9 +30,9 @@
                     {% if session.user|lower == comment.username|lower  %}
                         <li class="row collection-item">
                             <div class="col s12 m4 l8">
-                                <p>{{ comment.book_name}}</p>
-                                <p>Rated: {{ comment.given_rate}}/5</p>
-                                <p>Comment: {{ comment.added_comment}}</p>
+                                <p><span class="comment-part">Book name:</span> {{ comment.book_name}}</p>
+                                <p><span class="comment-part">Rated:</span> {{ comment.given_rate}}/5</p>
+                                <p><span class="comment-part">Comment:</span> <i>{{ comment.added_comment}}</i></p>
                             </div>
                             <div class="comments-btns col s12 m4 l4">
                                 <a href="{{ url_for('delete_review', comment_id=comment._id) }}" class="btn-small red darken-3">Delete</a>
