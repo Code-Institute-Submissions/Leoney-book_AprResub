@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row card-panel search-bar">
-    <form action="#" method="post" class="col s12">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s12 m8">
                 <i class="fas fa-search prefix teal-text text-lighten-2 text-shadow"></i>
@@ -9,7 +9,7 @@
                 <label for="query">Search</label>
             </div>
             <div class="col s12 m4">
-                <a href="{{ url_for('get_books') }}" class="red btn text-shadow">Reset</a>
+                <a href="{{ url_for('get_books') }}" class="red btn text-shadow"><i class="fas fa-undo-alt"></i></a>
                 <button type="submit" class="teal lighten-2 btn text-shadow">
                     <i class="fas fa-search left"></i> Search
                 </button>
@@ -18,7 +18,7 @@
     </form>
 </div>
 <div class="row">
-    <h3 class="center-align text-shadow">Newly Added</h3>
+    <h3 class="heading center-align text-shadow">Newly Added</h3>
 </div>
 <div class="row">
     {% for book in books[:-7:-1] %}
