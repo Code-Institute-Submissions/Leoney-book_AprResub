@@ -52,17 +52,6 @@ main {
     margin: 5rem 0 !important;
 }
 
-/*===== BOOKS CARDS PAGE =====*/
-
-.card-image {
-    width: 9.7rem;
-    height: 14rem;
-}
-
-.card-image img {
-    height: 100%;
-}
-
 /*===== ADD COMMENT MODAL =====*/
 
 .modal-comment{
