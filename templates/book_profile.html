@@ -14,47 +14,51 @@
                 <p class="teal-text text-lighten-2">{{ find_book_id.category_name }}</p>
                 <a class="btn-small teal lighten-2" href="#"><i class="white-text text-white text-shadow fab fa-amazon "></i></a>
                 <p>{{ find_book_id.book_description }}</p>
+                {% if session.user %}
+                    <a class="btn-small teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
+                {% else %}
+                    <a class="btn-small teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
+                {% endif %}
             </div>
         </div>
         <div class="row">
             <div class="col s12">
                 <div class="row">
-                    <div class="card-panel">
-                        {% if session.user %}
-                            <a class="btn-small teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
-                        {% else %}
-                            <a class="btn-small teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
-                        {% endif %}
-                        <span class="card-title text-shadow"> Comments</span>
+                    <ul class="collection with-header">
+                        <li class="collection-header">
+                            <h4><span class="card-title text-shadow"> Comments</span></h4>
+                        </li>
                         {% for comment in check_comments %}
                             {% if comment.book_name == find_book_id.book_name %}
-                                <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
-                                <p> {{ comment.added_comment}} </p>
+                                <li class="collection-item">
+                                    <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
+                                    <p> {{ comment.added_comment}} </p>
+                                </li>
                             {% endif %}
                         {% endfor %}
-                        <div id="modaladdcomment" class="modal modal-comment">
-                            <div class="modal-content">
-                                <form method="POST" action="{{ url_for('add_comment', book_id=find_book_id._id, book_name=find_book_id.book_name) }}">
-                                    <header>Rate This Book:</header>
-                                    <div class="row starwidget">
-                                        <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
-                                        <label for="rate-5" class="fas fa-star"></label>
-                                        <input type="radio" name="rate" id="rate-4" value="4" class="browser-default">
-                                        <label for="rate-4" class="fas fa-star"></label>
-                                        <input type="radio" name="rate" id="rate-3" value="3" class="browser-default">
-                                        <label for="rate-3" class="fas fa-star"></label>
-                                        <input type="radio" name="rate" id="rate-2" value="2" class="browser-default">
-                                        <label for="rate-2" class="fas fa-star"></label>
-                                        <input type="radio" name="rate" id="rate-1" value="1" class="browser-default">
-                                        <label for="rate-1" class="fas fa-star"></label>
-                                    </div>
-                                    <div class="row input-field">
-                                        <textarea name="comment_area" id="textarea1" class="materialize-textarea"></textarea>
-                                        <label for="textarea1">Add Comment Here</label>
-                                    </div>
-                                    <button class="btn-flat teal lighten-2 modal-close" type="submit">Post</button>
-                                </form>
-                            </div>
+                    </ul>
+                    <div id="modaladdcomment" class="modal modal-comment">
+                        <div class="modal-content">
+                            <form method="POST" action="{{ url_for('add_comment', book_id=find_book_id._id, book_name=find_book_id.book_name) }}">
+                                <header>Rate This Book:</header>
+                                <div class="row starwidget">
+                                    <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
+                                    <label for="rate-5" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-4" value="4" class="browser-default">
+                                    <label for="rate-4" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-3" value="3" class="browser-default">
+                                    <label for="rate-3" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-2" value="2" class="browser-default">
+                                    <label for="rate-2" class="fas fa-star"></label>
+                                    <input type="radio" name="rate" id="rate-1" value="1" class="browser-default">
+                                    <label for="rate-1" class="fas fa-star"></label>
+                                </div>
+                                <div class="row input-field">
+                                    <textarea name="comment_area" id="textarea1" class="materialize-textarea"></textarea>
+                                    <label for="textarea1">Add Comment Here</label>
+                                </div>
+                                <button class="btn-flat teal lighten-2 modal-close" type="submit">Post</button>
+                            </form>
                         </div>
                     </div>
                 </div>
