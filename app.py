@@ -112,6 +112,13 @@ def add_book():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_book.html", categories=categories)
 
+@app.route("/get_book_profile", methods=["GET"])
+def get_genres():
+    genres = list(mongo.db.categories.find().sort("category_name", 1))
+    books = list(mongo.db.books.find())
+    return render_template("genres.html", books=books, categories=categories)
+
+
 @app.route("/get_book_profile/<book_id>", methods=["GET"])
 def get_book_profile(book_id):
     book_id = book_id
