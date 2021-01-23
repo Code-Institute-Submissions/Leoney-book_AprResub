@@ -108,6 +108,24 @@ input#rate-5:checked ~ label {
     padding-top: 1rem;
 }
 
+/*===== GENRES PAGE =====*/
+
+.genre-book {
+    display:none;
+}
+
+.genre-book:nth-child(-n+6){
+    display:block;
+}
+
+.genre-book img {
+    width: 100%;
+}
+
+.genre-link a{
+    color: #4db6ac !important;
+}
+
 /*===== BOOK PROFILE =====*/
 
 .container.book-profile {
