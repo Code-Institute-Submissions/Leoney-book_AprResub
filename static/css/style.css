@@ -55,7 +55,7 @@ main {
 }
 
 .card-image:hover {
-    transition: all 0.2s ease-out;
+    transition: all 0.5s ease-out;
     box-shadow: -.65rem .65rem 0 rgb(255, 224, 178);
     border: 1px solid #cccccc;
 }
