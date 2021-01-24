@@ -126,8 +126,12 @@ input#rate-5:checked ~ label {
     color: #4db6ac !important;
 }
 
-.genre-name, .genre-link {
-    border-bottom: 2px solid #D8D8D8;
+.genre-link{
+    padding-top: 2rem;
+}
+
+.genre-name {
+    border-bottom: 2px solid #b2dfdb;
 }
 
 /*===== BOOK PROFILE =====*/
