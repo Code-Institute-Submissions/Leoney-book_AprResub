@@ -114,7 +114,7 @@ input#rate-5:checked ~ label {
     display:none;
 }
 
-.genre-book:nth-child(-n+6){
+.genre-book:nth-child(-n+7){
     display:block;
 }
 
@@ -124,6 +124,10 @@ input#rate-5:checked ~ label {
 
 .genre-link a{
     color: #4db6ac !important;
+}
+
+.genre-name, .genre-link {
+    border-bottom: 2px solid #D8D8D8;
 }
 
 /*===== BOOK PROFILE =====*/
