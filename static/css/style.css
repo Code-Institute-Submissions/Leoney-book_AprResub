@@ -127,11 +127,15 @@ input#rate-5:checked ~ label {
 }
 
 .genre-link{
-    padding-top: 2rem;
+    padding-top: 2rem !important;
 }
 
 .genre-name {
     border-bottom: 2px solid #b2dfdb;
+}
+
+.genre-name span {
+    background-image: linear-gradient(0deg,#b2dfdb 50%,transparent 50%);
 }
 
 /*===== BOOK PROFILE =====*/

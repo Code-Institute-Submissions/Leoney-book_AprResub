@@ -2,14 +2,14 @@
 {% block content %}
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <h3 class="center-align text-shadow">
+            <h3 class="center-align heading text-shadow">
                 Genres
             </h3>
         </div>
     </div>
     {% for category in categories %}
         <div class="genre-row row">
-            <div class="col s12"><h5 class="genre-name text-shadow">{{ category.category_name }}</h5></div>
+            <div class="col s12"><h5 class="genre-name heading text-shadow"><span>{{ category.category_name }}</span></h5></div>
             {% for book in books %}
                 {% if category.category_name == book.category_name %}
                     <div class="genre-book col s2">
