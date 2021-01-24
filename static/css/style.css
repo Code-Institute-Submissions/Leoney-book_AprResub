@@ -132,6 +132,7 @@ input#rate-5:checked ~ label {
 
 .genre-name {
     border-bottom: 2px solid #b2dfdb;
+    margin-bottom: 2rem;
 }
 
 .genre-name span {
