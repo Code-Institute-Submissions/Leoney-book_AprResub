@@ -145,7 +145,7 @@ input#rate-5:checked ~ label {
 
 /*===== BOOK PROFILE =====*/
 
-.container.book-profile {
+.book-profile-row {
     padding-top: 2rem;
 }
 
