@@ -149,6 +149,11 @@ input#rate-5:checked ~ label {
     padding-top: 2rem;
 }
 
+.book-profile-img {
+    box-shadow: -.65rem .65rem 0 rgba(255, 224, 178, .5);
+    width: 100%;
+}
+
 .book-profile h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;

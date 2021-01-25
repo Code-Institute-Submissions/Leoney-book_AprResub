@@ -2,11 +2,7 @@
 {% block content %}
         <div class="row book-profile">
             <div class="col s3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{ find_book_id.book_cover_link }}">
-                    </div>
-                </div>
+                <img class="book-profile-img" src="{{ find_book_id.book_cover_link }}">
             </div>
             <div class="book-profile col s9">
                 <h3><span>{{ find_book_id.book_name }}</span></h2>
