@@ -22,7 +22,7 @@
 </div>
 <div class="row">
     {% for book in books[:-7:-1] %}
-        <div class="col s12 m6 l2">
+        <div class="col s6 m6 l2">
             <a href="{{ url_for('get_book_profile', book_id=book._id) }}"> <img class="card-image" src="{{ book.book_cover_link }}"> </a>
         </div>
     {% endfor %}
