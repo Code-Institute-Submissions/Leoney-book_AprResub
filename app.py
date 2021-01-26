@@ -85,7 +85,7 @@ def profile(username):
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
     check_comments = mongo.db.comments.find()
-    return render_template("profile.html", username=username, books = books, check_comments = check_comments)
+    return render_template("profile.html", username=username, books=books, check_comments=check_comments)
 
 @app.route("/logout")
 def logout():
@@ -126,13 +126,13 @@ def get_book_profile(book_id):
     book_name = find_book_id.get("book_name")
     check_comments = list(mongo.db.comments.find())
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id=book_id, check_comments=check_comments)
 
 @app.route("/get_author_books/<author_name>", methods=["GET"])
 def get_author_books(author_name):
     author_name = author_name
     books = list(mongo.db.books.find())
-    return render_template("author.html", books=books, author_name = author_name )
+    return render_template("author.html", books=books, author_name=author_name)
 
 @app.route("/add_comment/<book_id>", methods=["GET", "POST"])
 def add_comment(book_id):
@@ -150,8 +150,8 @@ def add_comment(book_id):
         }
         mongo.db.comments.insert_one(rate_comment)
         flash("Rate/Comment Successfully Added")
-        return redirect(url_for("get_book_profile",book_id = book_id ))
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
+        return redirect(url_for("get_book_profile", book_id=book_id))
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id=book_id, check_comments=check_comments)
 
 @app.route("/edit_review/<comment_id>", methods=["GET", "POST"])
 def edit_review(comment_id):
@@ -164,13 +164,13 @@ def edit_review(comment_id):
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        mongo.db.comments.update({"_id": ObjectId(comment_id)}, { "$set": rate_comment})
+        mongo.db.comments.update({"_id": ObjectId(comment_id)}, {"$set": rate_comment})
         flash("Review Successfully Updated")
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
     check_comments = mongo.db.comments.find()
-    return render_template("profile.html", username=username, books = books, check_comments = check_comments)
+    return render_template("profile.html", username=username, books=books, check_comments=check_comments)
 
 @app.route("/delete_review/<comment_id>")
 def delete_review(comment_id):
@@ -180,7 +180,7 @@ def delete_review(comment_id):
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
     check_comments = mongo.db.comments.find()
-    return render_template("profile.html", username=username, books = books, check_comments = check_comments)
+    return render_template("profile.html", username=username, books=books, check_comments=check_comments)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
