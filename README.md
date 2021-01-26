@@ -32,9 +32,9 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 
     -   #### Typography
 
-        - I have used three types of fonts: 
-            - 'Rubik' with fallback on  Arial and sans-serif font;
-            - 'Georgia' with fallback on 'Times New Roman', Times and serif font;
+        I have used three types of fonts: 
+        - 'Rubik' with fallback on  Arial and sans-serif font;
+        - 'Georgia' with fallback on 'Times New Roman', Times and serif font;
 
 ## Features
 
@@ -94,7 +94,7 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 1. Create an affiliate link in each book profile to online store from where the user might buy it. 
 2. In user's profile > Added books section -  to add edit option. 
 3. In book's profile to add average rating.
-4. In genres page to enable the "More <genre> ... " links. 
+4. In genres page to enable the "More [genre] ... " links. 
 5. In author's page to add short biography.
 
 ## Technologies Used
