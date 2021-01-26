@@ -11,18 +11,18 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 ## User Experience (UX)
 
 -   ### User stories
-    1. As a user I want to be able to search for books.
-    2. As a user I want to be able to add a book if it is not in the site and edit it if needed.
-    3. As a user I want to be able to rate the book and write a review and edit it if needed.
-    4. As a user I want to be able to register in the site.
-    5. As a user I want to be able to log in with username and password and have a list with all added by me books and revies.
-    6. As a user I want to be able to search by book or author name.
-    7. As a user I want to be able to filter the books by genre or author.
+1. As a user I want to be able to search for books.
+2. As a user I want to be able to add a book if it is not in the site and edit it if needed.
+3. As a user I want to be able to rate the book and write a review and edit it if needed.
+4. As a user I want to be able to register in the site.
+5. As a user I want to be able to log in with username and password and have a list with all added by me books and revies.
+6. As a user I want to be able to search by book or author name.
+7. As a user I want to be able to filter the books by genre or author.
 
 -   ### Wireframes
 
     [Balsamiq](https://balsamiq.com/) was used wireframing.
-    The wireframes cna be checked [here](https://github.com/Leoney/book/documentation/wireframe/).
+    The wireframes can be checked [here](https://github.com/Leoney/book/tree/master/documentation/wireframe).
 
 -   ### Design
 
@@ -91,6 +91,12 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 
 ### Features Left to Implement
 
+1. Create an affiliate link in each book profile to online store from where the user might buy it. 
+2. In user's profile > Added books section -  to add edit option. 
+3. In book's profile to add average rating.
+4. In genres page to enable the "More <genre> ... " links. 
+5. In author's page to add short biography.
+
 ## Technologies Used
 
 ### Languages Used
@@ -138,38 +144,38 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 -   #### In Heroku 
     This project was deployed on [Heroku](https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=EAIaIQobChMIvb-6i4-47gIVi-5RCh2mLgpTEAAYASAAEgJSj_D_BwE) and can be seen on address [http://books-ms3.herokuapp.com/](http://books-ms3.herokuapp.com/).
 
-    1. In your local project repository create requirements.txt file which to contain all the dependancies that have to be installed. It can be done by running the command bellow in your CLI: 
-        ```pip3 freeze --local > requirements.txt```
-    2. Next create Procfile. It should be always with capital P and it specifies the commands that are executed by the app on startup. It can be done by running the command bellow in your CLI: 
-        ```echo web: python app.py > Procfile```
-    3. Push all the files to your Git repository.
-    4. Register and log in [Heroku](https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=EAIaIQobChMIvb-6i4-47gIVi-5RCh2mLgpTEAAYASAAEgJSj_D_BwE)
-    5. In Heroku click on 'Create  New App'. It has to be with unique name and for region choose the nearest to you one.
-    6. In the newly created app, go to Settings -> Config Vars. Here add the variables and theit values:
-        -   IP = 0.0.0.0
-        -   PORT = 5000
-        -   SECRET_KEY = [Your Secret key]
-        -   MONGO_DBNAME = [Name of DB]
-        -   MONGO_URI = [MongoDb connection string]
-    7. To connect your project through the GitHub repository, again in your Heroku app, this time go to Deploy -> Deployment method and choose GitHub. Then select the master branch and enable automatic deployment. 
+1. In your local project repository create requirements.txt file which to contain all the dependancies that have to be installed. It can be done by running the command bellow in your CLI: 
+    ```pip3 freeze --local > requirements.txt```
+2. Next create Procfile. It should be always with capital P and it specifies the commands that are executed by the app on startup. It can be done by running the command bellow in your CLI: 
+    ```echo web: python app.py > Procfile```
+3. Push all the files to your Git repository.
+4. Register and log in [Heroku](https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=EAIaIQobChMIvb-6i4-47gIVi-5RCh2mLgpTEAAYASAAEgJSj_D_BwE)
+5. In Heroku click on 'Create  New App'. It has to be with unique name and for region choose the nearest to you one.
+6. In the newly created app, go to Settings -> Config Vars. Here add the variables and theit values:
+    -   IP = 0.0.0.0
+    -   PORT = 5000
+    -   SECRET_KEY = [Your Secret key]
+    -   MONGO_DBNAME = [Name of DB]
+    -   MONGO_URI = [MongoDb connection string]
+7. To connect your project through the GitHub repository, again in your Heroku app, this time go to Deploy -> Deployment method and choose GitHub. Then select the master branch and enable automatic deployment. 
 
 -   #### Forking the GitHub Repository
     - A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
-    1. Log in to GitHub and locate the [Leoney/book](https://github.com/Leoney/book)
-    2. Under the repository name, click "Clone or download".
-    3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-    4. Open Git Bash
-    5. Change the current working directory to the location where you want the cloned directory to be made.
-    6. Type ``` git clone ```, and then paste the URL you copied in Step 3.
+1. Log in to GitHub and locate the [Leoney/book](https://github.com/Leoney/book)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type ``` git clone ```, and then paste the URL you copied in Step 3.
 
-    ```
-    $ git clone https://github.com/Leoney/Memory-Game.git
-    ```
+```
+$ git clone https://github.com/Leoney/Memory-Game.git
+```
 
-    7. Press Enter. Your local clone will be created.
+7. Press Enter. Your local clone will be created.
 
-    Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
 
