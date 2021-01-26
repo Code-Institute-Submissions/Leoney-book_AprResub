@@ -9,8 +9,8 @@
                 <label for="query">Search</label>
             </div>
             <div class="col s12 m4">
-                <a href="{{ url_for('get_books') }}" class="red btn text-shadow"><i class="fas fa-undo-alt"></i></a>
-                <button type="submit" class="teal lighten-2 btn text-shadow">
+                <a href="{{ url_for('get_books') }}" class="red btn-small text-shadow"><i class="fas fa-undo-alt"></i></a>
+                <button type="submit" class="teal lighten-2 btn-small text-shadow">
                     <i class="fas fa-search left"></i> Search
                 </button>
             </div>
@@ -22,7 +22,7 @@
 </div>
 <div class="row">
     {% for book in books[:-7:-1] %}
-        <div class="col s6 m6 l2">
+        <div class="book col s6 m6 l2">
             <a href="{{ url_for('get_book_profile', book_id=book._id) }}"> <img class="card-image" src="{{ book.book_cover_link }}"> </a>
         </div>
     {% endfor %}

@@ -50,6 +50,10 @@ main {
 
 /*===== NEWLY ADDED SECTION =====*/
 
+.book {
+    margin-bottom: 2rem;
+}
+
 .card-image {
     box-shadow: -.65rem .65rem 0 rgba(255, 224, 178, .5);
     width: 100%;
