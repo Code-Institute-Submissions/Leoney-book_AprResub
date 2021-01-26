@@ -115,7 +115,7 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 -   [PyMong](https://pymongo.readthedocs.io/en/stable/): A Python distribution containing tools for working with MongoDB.
 -   [Werkzeug Security](https://werkzeug.palletsprojects.com/en/1.0.x/utils/): Provides password security.
 
-### API's
+### Frameworks
 
 -   [Flask](https://flask.palletsprojects.com/en/1.1.x/): Web framework for developing applications
 
