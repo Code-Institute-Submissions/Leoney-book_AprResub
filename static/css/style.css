@@ -124,6 +124,7 @@ input#rate-5:checked ~ label {
 
 .genre-book {
     display:none;
+    margin-bottom: 2rem;
 }
 
 .genre-book:nth-child(-n+7){
@@ -132,10 +133,6 @@ input#rate-5:checked ~ label {
 
 .genre-link a{
     color: #4db6ac !important;
-}
-
-.genre-link{
-    padding-top: 2rem !important;
 }
 
 .genre-name {
