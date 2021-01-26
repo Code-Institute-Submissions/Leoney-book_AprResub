@@ -183,7 +183,7 @@ Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-clo
 - [MaterializeCSS](https://materializecss.com/)
 - [w3school](https://www.w3schools.com/)
 - [stackoverflow](https://stackoverflow.com/)
-- [Goodreads](https://www.goodreads.com/)
+- [Goodreads](https://www.goodreads.com/)- image links and style credits.
 
 ### Acknowledgements
 
