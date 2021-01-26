@@ -8,7 +8,7 @@
         {% for book in books %}
             {% if book.author_name == author_name %}
                 <div class="book col s12 m4 l2">
-                    <a href="{{ url_for('get_book_profile', book_id=book._id) }}"> <img class="card-image" src="{{ book.book_cover_link }}"> </a>
+                    <a href="{{ url_for('get_book_profile', book_id=book._id) }}"> <img class="card-image" src="{{ book.book_cover_link }}" alt="{{ book.book_name }}"> </a>
                 </div>
             {% endif %}
         {% endfor %}
