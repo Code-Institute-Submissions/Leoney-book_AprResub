@@ -10,14 +10,31 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 
 ## User Experience (UX)
 
--   ### User stories
-1. As a user I want to be able to search for books.
-2. As a user I want to be able to add a book if it is not in the site and edit it if needed.
-3. As a user I want to be able to rate the book and write a review and edit it if needed.
-4. As a user I want to be able to register in the site.
-5. As a user I want to be able to log in with username and password and have a list with all added by me books and revies.
-6. As a user I want to be able to search by book or author name.
-7. As a user I want to be able to filter the books by genre or author.
+- #### As a first time visitor
+    1. I want to be able to understand the purpose of the site.
+    1. I want to intuitively navigate through the site to browse the content.
+    1. I want to be able to search for a specific book.
+    1. I want to be able to find the 'Register' page easily.
+    1. I want to be able to register easily.
+ 
+- #### As a returning user
+    1. I want to be able to navigate to the 'Login' page easily.
+    1. I want to be able to Log In quickly.
+    1. I want to be able to see the most recent added books.
+    1. I want to be able to filter books by their genre.
+    1. I want to be able to filter books by their author.
+    1. I want to add new books easily.
+    1. I want to see list of the books I have added.
+    1. I want to be able to rate a book and leave a comment.
+    1. I want to be able to edit or delete the rate/comment I have left.
+    1. I want to see list of the rates and comments I have left for a book.
+    1. I want to view all my activity(added books and comments) on my profile page.
+    1. I want to be able to Log out.
+
+- #### As an admin
+    1. I want to be able to delete books from the website.
+    1. I want to have a control of all data on the website database.
+
 
 -   ### Wireframes
 
@@ -122,6 +139,7 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 ### Database
 
 -   [MongoDB](https://www.mongodb.com/2): Database service.
+
 
 ### Deployment
 
