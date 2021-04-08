@@ -140,6 +140,30 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 
 -   [MongoDB](https://www.mongodb.com/2): Database service.
 
+## Database
+
+### Structure
+
+- Database 'book_ms3' contain 4 collections
+    - **Users** - The main function of this collections is to store user's username and password.
+
+    <img src="./documentation/database/users.png" height="100px" />
+
+    - **Categories** - Contains all categories(genres) of books. Used in back-end logic to let registered and logged in users to filter books by genre.
+
+    <img src="./documentation/database/categories.png" height="100px" />
+
+    - **Books** - The main function is to store data about each book. This data is inserted on the 'Add Book' page only by registered and logged in users.
+
+    <img src="./documentation/database/books.png" height="100px" />
+
+    - **Comments** - This collection is mainly used alongside the 'Books' collection to facilitate rating and leaving a comment about specific book functionality.
+
+    <img src="./documentation/database/comments.png" height="100px" />
+
+### Relationship
+- The relationship between different fields is shown in the image below.
+<img src="./documentation/database/relationship.jpg" height="350px" />
 
 ### Deployment
 
