@@ -24,11 +24,13 @@ def get_books():
     books = list(mongo.db.books.find())
     return render_template("books.html", books=books)
 
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template("books.html", books=books)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -53,6 +55,7 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -63,9 +66,9 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -78,6 +81,7 @@ def login():
 
     return render_template("login.html")
 
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -85,7 +89,12 @@ def profile(username):
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
     check_comments = mongo.db.comments.find()
-    return render_template("profile.html", username=username, books=books, check_comments=check_comments)
+    return render_template(
+        "profile.html",
+        username=username,
+        books=books,
+        check_comments=check_comments)
+
 
 @app.route("/logout")
 def logout():
@@ -93,6 +102,7 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
 
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
@@ -112,6 +122,7 @@ def add_book():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_book.html", categories=categories)
 
+
 @app.route("/get_book_profile", methods=["GET"])
 def get_genres():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -126,13 +137,20 @@ def get_book_profile(book_id):
     book_name = find_book_id.get("book_name")
     check_comments = list(mongo.db.comments.find())
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id=book_id, check_comments=check_comments)
+    return render_template(
+        "book_profile.html",
+        find_book_id=find_book_id,
+        books=books,
+        book_id=book_id,
+        check_comments=check_comments)
+
 
 @app.route("/get_author_books/<author_name>", methods=["GET"])
 def get_author_books(author_name):
     author_name = author_name
     books = list(mongo.db.books.find())
     return render_template("author.html", books=books, author_name=author_name)
+
 
 @app.route("/add_comment/<book_id>", methods=["GET", "POST"])
 def add_comment(book_id):
@@ -151,12 +169,19 @@ def add_comment(book_id):
         mongo.db.comments.insert_one(rate_comment)
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("get_book_profile", book_id=book_id))
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id=book_id, check_comments=check_comments)
+    return render_template(
+        "book_profile.html",
+        find_book_id=find_book_id,
+        books=books,
+        book_id=book_id,
+        check_comments=check_comments)
+
 
 @app.route("/edit_review/<comment_id>", methods=["GET", "POST"])
 def edit_review(comment_id):
     if request.method == "POST":
-        find_comment_id = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
+        find_comment_id = mongo.db.comments.find_one(
+            {"_id": ObjectId(comment_id)})
         book_name = find_comment_id.get("book_name")
         rate_comment = {
             "book_name": book_name,
@@ -164,13 +189,19 @@ def edit_review(comment_id):
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        mongo.db.comments.update({"_id": ObjectId(comment_id)}, {"$set": rate_comment})
+        mongo.db.comments.update({"_id": ObjectId(comment_id)}, {
+                                 "$set": rate_comment})
         flash("Review Successfully Updated")
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
     check_comments = mongo.db.comments.find()
-    return render_template("profile.html", username=username, books=books, check_comments=check_comments)
+    return render_template(
+        "profile.html",
+        username=username,
+        books=books,
+        check_comments=check_comments)
+
 
 @app.route("/delete_review/<comment_id>")
 def delete_review(comment_id):
@@ -180,7 +211,12 @@ def delete_review(comment_id):
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
     check_comments = mongo.db.comments.find()
-    return render_template("profile.html", username=username, books=books, check_comments=check_comments)
+    return render_template(
+        "profile.html",
+        username=username,
+        books=books,
+        check_comments=check_comments)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
