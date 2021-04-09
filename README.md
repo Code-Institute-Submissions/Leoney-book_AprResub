@@ -113,7 +113,7 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 3. In book's profile to add average rating.
 4. In genres page to enable the "More [genre] ... " links. 
 5. In author's page to add short biography.
-6. An administrator profile priviveges to be added so the site administrator can able to edit or delete added by users books. 
+6. An administrator profile privileges to be added so the site administrator can able to edit or delete added by users books. 
 
 ## Technologies Used
 
@@ -178,16 +178,70 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 
 All testing was documented in [testing.md](https://github.com/Leoney/book/tree/master/testing.md) file.
 
-- [Firefox Web Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
-- [ChromeDevTools](https://developers.google.com/web/tools/chrome-devtools)
-- [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
-- [W3C Markup Validator](https://validator.w3.org/#validate_by_input)
-- [Pep8](http://pep8online.com/)
-
 ## Deployment
 
--   #### In Heroku 
-    This project was deployed on [Heroku](https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=EAIaIQobChMIvb-6i4-47gIVi-5RCh2mLgpTEAAYASAAEgJSj_D_BwE) and can be seen on address [http://books-ms3.herokuapp.com/](http://books-ms3.herokuapp.com/).
+### Local
+
+#### Pre-requisites
+- [Python 3](https://www.python.org/downloads/) - used to write the code and to run the project
+- [PIP](https://pypi.org/project/pip/) - used to install packages
+- [Git](https://git-scm.com/downloads) - used for version control
+- [Visual Studio Code](https://code.visualstudio.com/) or any IDE of your choice - used to compile the code.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account - used to facilitate databases and collections needed throughout the project. More detailed instructions on how to get started in [Mongo DB Atlas docs](https://docs.atlas.mongodb.com/)
+
+### Steps
+1. Go to the project repository https://github.com/Leoney/book
+2. Get the files by:
+    1. Clicking the 'Code' button located in the top section of the repositoryand then select 'Download ZIP' and unzip the files in the directory of your choice.
+    OR
+    2. Clone the repository by running the following command from your IDE
+    ``` git clone https://github.com/Leoney/book.git ```
+3. In your IDE, navigate to the project directory where you located downloaded files/cloned the repo.
+    ``` cd  local/path/to/project ```
+4. Python 3 has a built-in virtual environment [venv](https://docs.python.org/3/tutorial/venv.html). which you will have to initialize by running the following command:
+    ``` python3 -m venv .<name of your virtual environment> ```
+5. Activate your virtual environment:
+    - on MacOS: ``` source .<name of your virtual environment>/bin/activate ``` 
+    - on Windows: ```source .<name of your virtual environment>/Scripts\activate.bat```
+6. Install all requirements from requrements.txt file:
+    ``` pip3 install -r requirements.txt ```
+7. Create a file `env.py` to store environment variables.
+8. Add environment variable in the format as shown below, where the `SECRET_KEY` value is a key of your choice and `MONGO_URI` is obained from your MongoDB account under Overview > Connect > Connect your application and select relevant version of Python.
+        os.environ.setdefault("SECRET_KEY", "")
+        os.environ.setdefault("MONGO_URI", "")
+9. In MongoDB create the following:
+    - database with name 'book-ms3'
+    - collection named 'categories' and add 6 documents with field category_name, one document for each in the list: "Classics", "Romace", "Fantasy" "Fiction", "Non-Fiction", "Young Adults".
+        _id: <ObjectId>
+        category_name: <String>
+        - Refer to [this example](./documentations/database/categories.png).
+    - collection named 'users':
+        _id: <ObjectId>
+        username: <String>
+        password: <String>
+        - Refer to [this example](./documentations/database/users.png).
+    - collection named 'books':
+        _id: <ObjectId>
+        category_name: <String>
+        book_name: <String>
+        author_name: <String>
+        book_cover_link: <String>
+        book_description: <String>
+        - Refer to [this example](./documentations/database/books.png).
+    - collection named 'comments':
+        _id: <ObjectId>
+        book_name: <String>
+        username: <String>
+        given_rate: <String>
+        added_comment: <String>
+        - Refer to [this example](./documentations/database/comments.png).
+
+10. Run the application
+    ``` python3 app.py ```
+
+11. After you run it, in your terminal will be displayed the link on which the web app is accessible.
+
+## Remote
 
 1. In your local project repository create requirements.txt file which to contain all the dependancies that have to be installed. It can be done by running the command bellow in your CLI: 
     ```pip3 freeze --local > requirements.txt```
@@ -203,24 +257,6 @@ All testing was documented in [testing.md](https://github.com/Leoney/book/tree/m
     -   MONGO_DBNAME = [Name of DB]
     -   MONGO_URI = [MongoDb connection string]
 7. To connect your project through the GitHub repository, again in your Heroku app, this time go to Deploy -> Deployment method and choose GitHub. Then select the master branch and enable automatic deployment. 
-
--   #### Forking the GitHub Repository
-    - A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
-
-1. Log in to GitHub and locate the [Leoney/book](https://github.com/Leoney/book)
-2. Under the repository name, click "Clone or download".
-3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-4. Open Git Bash
-5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type ``` git clone ```, and then paste the URL you copied in Step 3.
-
-```
-$ git clone https://github.com/Leoney/Memory-Game.git
-```
-
-7. Press Enter. Your local clone will be created.
-
-Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
 

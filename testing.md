@@ -132,10 +132,15 @@
 - [Login page Lighthouse performance audit](https://github.com/Leoney/book/blob/master/documentation/validation_results/login_lighthouse_performance_audit.png)
 - [Register page Lighthouse performance audit](https://github.com/Leoney/book/blob/master/documentation/validation_results/register_lighthouse_performance_audit.png)
 
+
+### Further Testing
+-   The Website was tested on Google Chrome,Mozilla Firefox, Safari.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPad, iPhone7, iPhone 8 & iPhoneX.
+
 ## Known Bugs and Errors
 
 - On 'Add Book', if the book cover link is not from Goodreads the size of the box with the book cover link is different from the rest.
+- The book cover links boxes size has to be fixed for iPad display size as well.
 - In the [Profile page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/profile_html_validation.png) there are errors for repeating id names, which is happenening as the modal block is in 'for loop' and this causes the repetition. I am planing to fix it by removing the modal from the loop and using javascript function.
 - In the [Add book page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/add_book_html_validation.png) tehre is an error with a materialize component. The readonly attribute is added automatically to the component by materialize.
-
-
+- After search the home page shows the results with the 'Newly Added' heading, which has to be fixed.
