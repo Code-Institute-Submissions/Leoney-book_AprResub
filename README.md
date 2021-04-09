@@ -113,6 +113,7 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 3. In book's profile to add average rating.
 4. In genres page to enable the "More [genre] ... " links. 
 5. In author's page to add short biography.
+6. An administrator profile priviveges to be added so the site administrator can able to edit or delete added by users books. 
 
 ## Technologies Used
 
@@ -174,6 +175,8 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 - [GitHub](https://github.com/): A provider of Internet hosting for software development and version control using Git.
 
 ## Testing
+
+All testing was documented in [testing.md](https://github.com/Leoney/book/tree/master/testing.md) file.
 
 - [Firefox Web Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
 - [ChromeDevTools](https://developers.google.com/web/tools/chrome-devtools)

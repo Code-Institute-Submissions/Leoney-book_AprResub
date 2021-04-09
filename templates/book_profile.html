@@ -13,7 +13,7 @@
                 {% if session.user %}
                     <a class="btn-small teal lighten-2 modal-trigger comment-btn" href="#modaladdcomment">Add Comment <i class="far fa-comment-dots"></i> </a>
                 {% else %}
-                    <a class="btn-small teal lighten-2 modal-trigger comment-btn disabled" href="#">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
+                    <a class="btn-small teal lighten-2 modal-trigger comment-btn" href="{{ url_for('login') }}">Login To Add Comment</a>
                 {% endif %}
             </div>
         </div>

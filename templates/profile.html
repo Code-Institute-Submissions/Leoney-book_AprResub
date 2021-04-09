@@ -36,9 +36,9 @@
                             </div>
                             <div class="comments-btns col s12 m4 l4">
                                 <a href="{{ url_for('delete_review', comment_id=comment._id) }}" class="btn-small red darken-3">Delete</a>
-                                <a href="#modaleditcomment" class="btn-small modal-trigger teal lighten-2">Edit</a>
+                                <a href="#modaleditcomment{{ comment._id }}" class="btn-small modal-trigger teal lighten-2">Edit</a>
                             </div>
-                            <div id="modaleditcomment" class="modal modal-comment">
+                            <div id="modaleditcomment{{ comment._id }}" class="modal modal-comment">
                                 <div class="modal-content">
                                     <form method="POST" action="{{ url_for('edit_review', comment_id=comment._id, book_name = comment.book_name) }}">
                                         <header>Rate This Book:</header>
