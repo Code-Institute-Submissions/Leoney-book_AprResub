@@ -214,12 +214,12 @@ All testing was documented in [testing.md](https://github.com/Leoney/book/tree/m
     - collection named 'categories' and add 6 documents with field category_name, one document for each in the list: "Classics", "Romace", "Fantasy" "Fiction", "Non-Fiction", "Young Adults".
         _id: <ObjectId>
         category_name: <String>
-        - Refer to [this example](./documentations/database/categories.png).
+        - Refer to [this example](./documentation/database/categories.png).
     - collection named 'users':
         _id: <ObjectId>
         username: <String>
         password: <String>
-        - Refer to [this example](./documentations/database/users.png).
+        - Refer to [this example](./documentation/database/users.png).
     - collection named 'books':
         _id: <ObjectId>
         category_name: <String>
@@ -227,14 +227,14 @@ All testing was documented in [testing.md](https://github.com/Leoney/book/tree/m
         author_name: <String>
         book_cover_link: <String>
         book_description: <String>
-        - Refer to [this example](./documentations/database/books.png).
+        - Refer to [this example](./documentation/database/books.png).
     - collection named 'comments':
         _id: <ObjectId>
         book_name: <String>
         username: <String>
         given_rate: <String>
         added_comment: <String>
-        - Refer to [this example](./documentations/database/comments.png).
+        - Refer to [this example](./documentation/database/comments.png).
 
 10. Run the application
     ``` python3 app.py ```
