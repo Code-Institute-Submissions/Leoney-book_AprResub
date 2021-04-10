@@ -146,6 +146,6 @@
 - After search the home page shows the results with the 'Newly Added' heading, which has to be fixed.
 - In the Edit comment modal, if the comment is longer the user have to click in the textarea to expand and see the whole comment.
 
-## Fixed Bugs
+## Fixed Bugs and Errors
 
 - As the Edit comment modal is in 'for loop', the id-s were repeting which was causing this validation errors [Profile page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/profile_html_validation.png). I fixed it by using the comment id to make the id-s unrepeatable. 
