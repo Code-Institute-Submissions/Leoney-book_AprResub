@@ -47,16 +47,16 @@
                                     <form method="POST" action="{{ url_for('edit_review', comment_id=comment._id, book_name = comment.book_name) }}">
                                         <header>Rate This Book:</header>
                                         <div class="row starwidget">
-                                            <input type="radio" name="rate" id="rate-5" value="5" class="browser-default" {% if comment.given_rate == '5' %} checked="" {% endif %}>
-                                            <label for="rate-5" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-4" value="4" class="browser-default" {% if comment.given_rate <= '4' %} checked="" {% endif %}>
-                                            <label for="rate-4" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-3" value="3" class="browser-default" {% if comment.given_rate <= '3' %} checked="" {% endif %}>
-                                            <label for="rate-3" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-2" value="2" class="browser-default" {% if comment.given_rate <= '2' %} checked="" {% endif %}>
-                                            <label for="rate-2" class="fas fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-1" value="1" class="browser-default"  {% if comment.given_rate == '1' %} checked="" {% endif %}>
-                                            <label for="rate-1" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="{{ comment._id }}-rate-5" value="5" class="browser-default" {% if comment.given_rate == '5' %} checked="" {% endif %}>
+                                            <label for="{{ comment._id }}-rate-5" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="{{ comment._id }}-rate-4" value="4" class="browser-default" {% if comment.given_rate <= '4' %} checked="" {% endif %}>
+                                            <label for="{{ comment._id }}-rate-4" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="{{ comment._id }}-rate-3" value="3" class="browser-default" {% if comment.given_rate <= '3' %} checked="" {% endif %}>
+                                            <label for="{{ comment._id }}-rate-3" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="{{ comment._id }}-rate-2" value="2" class="browser-default" {% if comment.given_rate <= '2' %} checked="" {% endif %}>
+                                            <label for="{{ comment._id }}-rate-2" class="fas fa-star"></label>
+                                            <input type="radio" name="rate" id="{{ comment._id }}-rate-1" value="1" class="browser-default"  {% if comment.given_rate == '1' %} checked="" {% endif %}>
+                                            <label for="{{ comment._id }}-rate-1" class="fas fa-star"></label>
                                         </div>
                                         <div class="row input-field">
                                             <textarea name="comment_area" id="textarea1" class="materialize-textarea">{{ comment.added_comment}}</textarea>
