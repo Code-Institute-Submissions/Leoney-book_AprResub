@@ -8,30 +8,35 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
+# Creating an instance of Flask
 app = Flask(__name__)
 
+# MongoDB connection
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
+# Creating an instance of PyMongo
 mongo = PyMongo(app)
 
 
+# Creating an instance of
 @app.route("/")
 @app.route("/get_books")
 def get_books():
+    # Retrieve all books from collection 'books'
     books = list(mongo.db.books.find())
     return render_template("books.html", books=books)
 
-
+# Search route
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # text search through the 'books' collection string content
     query = request.form.get("query")
     books = list(mongo.db.books.find({"$text": {"$search": query}}))
     return render_template("books.html", books=books)
 
-
+# Register route
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -55,7 +60,7 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
-
+# Login route
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -81,7 +86,7 @@ def login():
 
     return render_template("login.html")
 
-
+# User's profile route
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -95,7 +100,7 @@ def profile(username):
         books=books,
         check_comments=check_comments)
 
-
+# Logout route
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -103,9 +108,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# Add a book route
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
+    # add new book to 'books' collection
     if request.method == "POST":
         book = {
             "category_name": request.form.get("category_name"),
@@ -122,16 +128,22 @@ def add_book():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_book.html", categories=categories)
 
-
-@app.route("/get_book_profile", methods=["GET"])
+# Genres route
+@app.route("/get_genres", methods=["GET"])
 def get_genres():
+    """ get a list of all category names and a list
+        with all books through which to loop on the Genres page
+        and split the books by genre """
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     books = list(mongo.db.books.find())
     return render_template("genres.html", books=books, categories=categories)
 
-
+# Book's profile/details route
 @app.route("/get_book_profile/<book_id>", methods=["GET"])
 def get_book_profile(book_id):
+    """ By the passed book_id find and get all fields of the book from books collection.
+        Gets a list of all comments so on the Book Profile page can loop through it
+        get only the comments which are for this book by book_name. """
     book_id = book_id
     find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     book_name = find_book_id.get("book_name")
@@ -144,16 +156,20 @@ def get_book_profile(book_id):
         book_id=book_id,
         check_comments=check_comments)
 
-
+# Author's books route
 @app.route("/get_author_books/<author_name>", methods=["GET"])
 def get_author_books(author_name):
+    """ Get books list and on the Author page loop through it
+        get only the books which have the same as the passed in author_name field value."""
     author_name = author_name
     books = list(mongo.db.books.find())
     return render_template("author.html", books=books, author_name=author_name)
 
-
+# Add comment route
 @app.route("/add_comment/<book_id>", methods=["GET", "POST"])
 def add_comment(book_id):
+    """ Post a comment for a book and redirect the user
+        to the page of the same book where is posted the comment."""
     if request.method == "POST":
         dook_id = book_id
         find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -176,9 +192,10 @@ def add_comment(book_id):
         book_id=book_id,
         check_comments=check_comments)
 
-
+# Edit comment/review route
 @app.route("/edit_review/<comment_id>", methods=["GET", "POST"])
 def edit_review(comment_id):
+    # Edit a comment left by the same user who has logged in
     if request.method == "POST":
         find_comment_id = mongo.db.comments.find_one(
             {"_id": ObjectId(comment_id)})
@@ -202,9 +219,10 @@ def edit_review(comment_id):
         books=books,
         check_comments=check_comments)
 
-
+# Delete comment/review route
 @app.route("/delete_review/<comment_id>")
 def delete_review(comment_id):
+    # Delete a comment left by the same user who has logged in
     mongo.db.comments.remove({"_id": ObjectId(comment_id)})
     flash("Review Successfully Deleted")
     username = mongo.db.users.find_one(

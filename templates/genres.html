@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+<!-- Main content -->
 {% block content %}
+    <!-- Genres page -->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <h3 class="center-align heading text-shadow">
@@ -7,6 +9,7 @@
             </h3>
         </div>
     </div>
+    <!-- Gengre block with it's name and books in this genre-->
     {% for category in categories %}
         <div class="genre-row row">
             <div class="col s12">

@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+<!-- Main content -->
 {% block content %}
+    <!-- Author name -->
     <div class="row">
         <h3>{{ author_name }}</h3>
     </div>
+    <!-- Books written by this autor -->
     <div class="row">
         <br>
         {% for book in books %}

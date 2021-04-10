@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+<!-- Main content -->
 {% block content %}
 <div class="row card-panel search-bar">
+    <!-- Search bar -->
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s12 m8">
@@ -17,10 +19,12 @@
         </div>
     </form>
 </div>
+<!-- Newly added books -->
 <div class="row">
     <h3 class="heading center-align text-shadow"><span>Newly Added</span></h3>
 </div>
 <div class="row">
+    <!-- Get the last 6 added books in descending order -->
     {% for book in books[:-7:-1] %}
         <div class="book col s6 m4 l2">
             <a href="{{ url_for('get_book_profile', book_id=book._id) }}"> <img class="card-image" src="{{ book.book_cover_link }}" alt="{{ book.book_name }}"> </a>

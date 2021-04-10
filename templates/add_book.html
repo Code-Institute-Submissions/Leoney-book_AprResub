@@ -1,9 +1,12 @@
 {% extends "base.html" %}
+<!-- Main content -->
 {% block content %}
+    <!-- Add a book form -->
     <h3 class="teal-text text-lighten-2 center-align text-shadow">Add Book</h3>
 
     <div class="row card-panel">
         <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
+            <!-- Genre selector -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix teal-text text-lighten-2 text-shadow"></i>
@@ -16,6 +19,7 @@
                     <label for="category_name">Book Genre Select</label>
                 </div>
             </div>
+            <!-- Book title field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-book prefix teal-text text-lighten-2 text-shadow"></i>
@@ -24,6 +28,7 @@
                     <label for="book_name">Book Title</label>
                 </div>
             </div>
+            <!-- Author name field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-feather-alt prefix teal-text text-lighten-2 text-shadow"></i>
@@ -32,6 +37,7 @@
                     <label for="author_name">Author</label>
                 </div>
             </div>
+            <!-- Book's cover link field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix teal-text text-lighten-2 text-shadow"></i>
@@ -40,6 +46,7 @@
                     <label for="book_cover_link">Book Cover Link</label>
                 </div>
             </div>
+            <!-- Book description field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-scroll prefix teal-text text-lighten-2 text-shadow"></i>
@@ -48,6 +55,7 @@
                     <label for="book_description">Book Description</label>
                 </div>
             </div>
+            <!-- Add book submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large teal lighten-2 text-shadow">
