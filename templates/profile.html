@@ -59,8 +59,8 @@
                                             <label for="{{ comment._id }}-rate-1" class="fas fa-star"></label>
                                         </div>
                                         <div class="row input-field">
-                                            <textarea name="comment_area" id="textarea1" class="materialize-textarea">{{ comment.added_comment}}</textarea>
-                                            <label for="textarea1"></label>
+                                            <textarea name="comment_area" id="{{ comment._id }}-textarea" class="materialize-textarea">{{ comment.added_comment}}</textarea>
+                                            <label for="{{ comment._id }}-textarea"></label>
                                             <br>
                                         </div>
                                         <button class="btn-flat teal lighten-2 modal-close" type="submit">Edit</button>
