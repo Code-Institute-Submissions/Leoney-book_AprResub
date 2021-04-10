@@ -141,6 +141,11 @@
 
 - On 'Add Book', if the book cover link is not from Goodreads the size of the box with the book cover link is different from the rest.
 - The book cover links boxes size has to be fixed for iPad display size as well.
-- In the [Profile page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/profile_html_validation.png) there are errors for repeating id names, which is happenening as the modal block is in 'for loop' and this causes the repetition. I am planing to fix it by removing the modal from the loop and using javascript function.
+- <s>In the [Profile page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/profile_html_validation.png) there are errors for repeating id names, which is happenening as the modal block is in 'for loop' and this causes the repetition. I am planing to fix it by removing the modal from the loop and using javascript function.</s>
 - In the [Add book page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/add_book_html_validation.png) tehre is an error with a materialize component. The readonly attribute is added automatically to the component by materialize.
 - After search the home page shows the results with the 'Newly Added' heading, which has to be fixed.
+- In the Edit comment modal, if the comment is longer the user have to click in the textarea to expand and see the whole comment.
+
+## Fixed Bugs
+
+- As the Edit comment modal is in 'for loop', the id-s were repeting which was causing this validation errors [Profile page validation results](https://github.com/Leoney/book/blob/master/documentation/validation_results/profile_html_validation.png). I fixed it by using the comment id to make the id-s unrepeatable. 
