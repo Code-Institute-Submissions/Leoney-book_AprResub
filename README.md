@@ -1,6 +1,6 @@
 <h1 align="center">B.O.O.K</h1>
 
-B.O.O.K. is my third milestone project. The name stands for "Big Ocean of Knowledge" and it is book review and recommendation site where users can find their next read, add their recent read, rate it and share what is their oppinion about it and discuss it with other users/readers. 
+B.O.O.K. is my third milestone project. The name stands for "Big Ocean of Knowledge" and the idea of the site is to be social cataloging website that allows users to search through it's database of books, sign up and contribute to it by adding more books, share their reviews about certain book or just find their next read.
 
 ## Demo 
 
@@ -114,6 +114,8 @@ A live demo can be found [here](https://books-ms3.herokuapp.com/).
 4. In genres page to enable the "More [genre] ... " links. 
 5. In author's page to add short biography.
 6. An administrator profile privileges to be added so the site administrator can able to edit or delete added by users books. 
+7. On adding a new book to run a check if the does not already exist in the 'books' collection.
+8. Add an option for the users to reset their password.
 
 ## Technologies Used
 
@@ -207,8 +209,13 @@ All testing was documented in [testing.md](https://github.com/Leoney/book/tree/m
     ``` pip3 install -r requirements.txt ```
 7. Create a file `env.py` to store environment variables.
 8. Add environment variable in the format as shown below, where the `SECRET_KEY` value is a key of your choice and `MONGO_URI` is obained from your MongoDB account under Overview > Connect > Connect your application and select relevant version of Python.
-        os.environ.setdefault("SECRET_KEY", "")
-        os.environ.setdefault("MONGO_URI", "")
+        ``` import os
+
+            os.environ.setdefault("IP", "0.0.0.0")
+            os.environ.setdefault("PORT", "5000")
+            os.environ.setdefault("SECRET_KEY", "your_secret_key_here")
+            os.environ.setdefault("MONGO_URI", "mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>-4g3i1.mongodb.net/<DATABASE>?retryWrites=true&w=majority")
+            os.environ.setdefault("MONGO_DBNAME", "book_ms3") ```
 9. In MongoDB create the following:
     - database with name 'book-ms3'
     - collection named 'categories' and add 6 documents with field category_name, one document for each in the list: "Classics", "Romace", "Fantasy" "Fiction", "Non-Fiction", "Young Adults".
